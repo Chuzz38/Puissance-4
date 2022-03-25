@@ -22,7 +22,6 @@ Console
 <br>- IA contre Joueur, ou Joueur contre Joueur
 <br>- Demander les noms des Joueurs
 
-<br>Explique les différentes étapes et contient un peu de programmation :http://cregut.perso.enseeiht.fr/ENS/2015-apad-algo1/algo1-apad-2015-s4-serie2__Algo-Python-corrige.pdf
 
 
 
