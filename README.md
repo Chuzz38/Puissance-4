@@ -1,5 +1,3 @@
 # Puissance-4
 Puissance 4
-<br> t
-salut la
-ca va ?
+<br> 6 lignes, 7 colonnes
