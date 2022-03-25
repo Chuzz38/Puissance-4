@@ -2,7 +2,7 @@
 Puissance 4
 <br> 6 lignes, 7 colonnes, 42 jetons en tout de 2 couleurs différents (21 rouges, 21 jaunes)
 <br> Le but étant d'aligner 4 jetons
-<br><strong>But du jeu :<\strong>
+<br><strong>But du jeu :</strong>
 <br>Être le premier joueur à placer quatre de ses pions sur une ligne horizontale, verticale
 ou diagonale continue.
 <br>Règles du jeu :
