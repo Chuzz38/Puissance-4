@@ -1,4 +1,4 @@
-."""On va créer une classe puissance 4 qui aura les différents attributs
+"""On va créer une classe puissance 4 qui aura les différents attributs
 et les différentes méthodes pour rendre le puissance 4 possible"""
 
 
