@@ -6,7 +6,7 @@ Puissance 4
 <br>Être le premier joueur à placer quatre de ses pions sur une ligne horizontale, verticale
 ou diagonale continue.
 <br><strong>Règles du jeu :</strong>
-<br>1. Choisissez le premier joueur. Le joueur qui commence la première partie sera
+<br>1. Choisissez le premier joueur (ou choisi au hasard). Le joueur qui commence la première partie sera
 le deuxième joueur au cours de la deuxième partie.
 <br>2. À tour de rôle, chaque joueur fait tomber un de ses pions dans une des fentes
 au sommet de la grille.
