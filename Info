@@ -1,3 +1,22 @@
 23bzG86BQhzWZ2eYBZs7yGqL1bTYRupmZVc82z2Cz7CG
 
 https://solscan.io/
+
+
+---------------------------------------------------------------------------------------------
+
+import os
+
+class Puissance4():
+
+    def __init__(self, nl=6, nc=7, jeton=('@', 'X')):
+        """ Constructeur, crée la grille et lance une nouvelle partie"""
+        self.nl = nl
+        self.nc = nc
+        self.jeton = jeton
+        self.board = [['.' for i in range(nc)] for j in range(nl)]
+        self.nouvellepartie(self.nl, self.nc, self.jeton)
+        
+        
+
+---------------------------------------------------------------------------------------------
