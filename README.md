@@ -30,4 +30,9 @@ https://github.com/cot44/Puissance_4
 
 
 <br> Toutes les fonctions nécessaires à la classe :
-     <br>-
+<br>-fonction victoire, pour vérifier si il n'y a pas un gagant
+<br>-fonction pour savoir à quel joueur c'est de jouer
+<br>-fonction pour savoir où le joueur veut placer son jeton
+<br>-fonction pour savoir si la case et le coup sont disponibles et possibles (get_case)
+<br>-fonction pour afficher le jeu pour que le joueur sache comment est la table du jeu à un moment donné
+<br>-fonction pour recommencer une nouvelle partie.
