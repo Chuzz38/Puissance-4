@@ -27,3 +27,7 @@ Console
 
 https://github.com/cot44/Puissance_4
 <br> https://he-arc.github.io/livre-python/pygame/index.html
+
+
+<br> Toutes les fonctions nécessaires à la classe :
+     <br>-
