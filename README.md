@@ -30,7 +30,7 @@ https://github.com/cot44/Puissance_4
 
 
 <br> Toutes les fonctions nécessaires à la classe :
-<br>-fonction victoire, pour vérifier si il n'y a pas un gagant
+<br>-fonction victoire, pour vérifier si il n'y a pas un gagnant, il faut traiter tous les cas possibles : ligne, colonne et diagonales
 <br>-fonction pour savoir à quel joueur c'est de jouer
 <br>-fonction pour savoir où le joueur veut placer son jeton
 <br>-fonction pour savoir si la case et le coup sont disponibles et possibles (get_case)
