@@ -24,8 +24,8 @@ Console
 
 
 
-
-https://github.com/cot44/Puissance_4
+<br>https://www.pygame.org/docs/ref/pygame.html#module-pygame
+<br>https://github.com/cot44/Puissance_4
 <br> https://he-arc.github.io/livre-python/pygame/index.html
 
 
