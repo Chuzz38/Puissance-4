@@ -23,7 +23,7 @@ Console
 <br>- Demander les noms des Joueurs
 
 
-
+le lien de bg http://sdz.tdct.org/sdz/interface-graphique-pygame-pour-python.html
 <br>https://www.pygame.org/docs/ref/pygame.html#module-pygame
 <br>https://github.com/cot44/Puissance_4
 <br> https://he-arc.github.io/livre-python/pygame/index.html
