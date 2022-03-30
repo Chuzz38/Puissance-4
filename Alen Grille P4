@@ -4,6 +4,8 @@ Le code afiche des errors si nr° de ligne ou colonne entrée est plus grand que
 
 https://docplayer.fr/180817771-Puissance-4-version-graphique.html     (PDF)
 
+http://cregut.perso.enseeiht.fr/ENS/2015-apad-algo1/algo1-apad-2015-s4-serie2__Algo-Python-corrige.pdf     (Corrigé PDF)
+
 -------------------------------------------------------------------------------------------------------------------------------
 joueur1 = input("Ecrivez le nom du joueur 1 : ")
 joueur2 = input("Ecrivez le nom du joueur 2 : ")
