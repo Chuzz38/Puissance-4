@@ -1,7 +1,3 @@
-23bzG86BQhzWZ2eYBZs7yGqL1bTYRupmZVc82z2Cz7CG
-
-https://solscan.io/
-
 
 ---------------------------------------------------------------------------------------------
 
@@ -16,7 +12,7 @@ class Puissance4():
         self.jeton = jeton
         self.board = [['.' for i in range(nc)] for j in range(nl)]
         self.nouvellepartie(self.nl, self.nc, self.jeton)
-        
+        https://github.com/Chuzz38/Puissance-4/blob/main/Info
         
 
 ---------------------------------------------------------------------------------------------
