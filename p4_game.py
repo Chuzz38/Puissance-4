@@ -98,7 +98,5 @@ class P4_game:
 
 
 
-
-
 if __name__ == "__main__":
-    pass
+    print(get_case(1,0))
