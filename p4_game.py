@@ -65,7 +65,7 @@ class P4_game:
             c -= 1
         if nbPions >= 4:
             return True
-        #vérifier si la diagonale haut gauche --> bas droit est correcte 
+        #vérifier si la diagonale haut gauche --> bas droit est correcte oui
 
     def nouvellepartie(self, nl=6, nc=7, jeton =('1', '2'))
         pass
