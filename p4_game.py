@@ -1,4 +1,3 @@
-import random
 """On va créer une classe puissance 4 qui aura les différents attributs
 et les différentes méthodes pour rendre le puissance 4 possible"""
 
@@ -16,7 +15,6 @@ class P4_game:
         self.jeton = jeton
         self.joueur = joueur 
         self.tableJeu = [['0' for i in range(nc)] for j in range(nl)]
-        self.nouvellepartie(self.nl, self.nc, self.jeton)
 
     def get_case(self, ligne, colonne):
         return self.tableJeu[ligne][colonne]
@@ -99,4 +97,5 @@ class P4_game:
 
 
 if __name__ == "__main__":
+    
     print(get_case(1,0))
