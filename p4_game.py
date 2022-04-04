@@ -97,5 +97,7 @@ class P4_game:
 
 
 if __name__ == "__main__":
-    
-    print(get_case(1,0))
+    nc = 7
+    nl = 6
+    tableJeu = [['0' for i in range(nc)] for j in range(nl)]
+    print(tableJeu)
