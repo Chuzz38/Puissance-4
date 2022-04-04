@@ -40,12 +40,32 @@ class P4_game:
         tester toutes les combinaisons possibles : colonne, ligne
         et diagonales
         """
-        victoire = False
-        victoirePossible = self.jeton[joueur-1] * 4 #on donne la combinaison pour que ça soit gagné
-        #vérifier si la ligne est correcte
-        ligne_tableJeu = [ligne[colonne]for colonne in self.tableJeu]
-        while not victoire:
-            
+        #vérifier si la colonne est correcte
+        l, c = ligne, colonne
+        pionsColonne = 0
+        while c <= 0 and self.tableJeu[l][c-1] == self.joueur:
+            pionsColonne += 1
+            c = c + 1
+        c = colonne 
+        while c >= 0 and self.tableJeu[l][c+1] == self.joueur:
+            pionsColonne += 1
+            c = c + 1
+        if pionsColonne >= 4:
+            return True
+
+        #vérfier si la ligne est correcte 
+        l, c = ligne, colonne
+        pionsLigne = 0
+        while l <= 0 and self.tableJeu[l-1][c] == self.joueur:
+            pionsLigne += 1
+            l += 1
+        l = ligne
+        while l >= 0 and self.tableJeu[l+1][c] == self.joueur:
+            pionsLigne += 1
+            c -= 1
+        if nbPions >= 4:
+            return True
+        #vérifier si la diagonale haut gauche --> bas droit est correcte oui
 
     def nouvellepartie(self, nl=6, nc=7, jeton =('1', '2'))
         pass
