@@ -37,4 +37,4 @@ le lien de bg http://sdz.tdct.org/sdz/interface-graphique-pygame-pour-python.htm
 <br>-fonction pour afficher le jeu pour que le joueur sache comment est la table du jeu à un moment donné
 <br>-fonction pour recommencer une nouvelle partie.
 
-Désigné par Thomas le bg, Alexis, Alexis et Alen
+Désigné par Thomas le bg, Alexis, Alexis et Alen le 
