@@ -39,11 +39,11 @@ class P4_game:
         #vérifier si la colonne est correcte
         l, c = ligne, colonne
         pionsColonne = 0
-        while c > 0 and self.tableJeu[l][c-1] == self.joueur:
+        while c > 0 and self.tableJeu[l][c-1] == joueur:
             pionsColonne += 1
             c = c - 1
         c = colonne 
-        while c < 6 and self.tableJeu[l][c+1] == self.joueur:
+        while c < 6 and self.tableJeu[l][c+1] == joueur:
             pionsColonne += 1
             c = c + 1
         if pionsColonne >= 4:
@@ -52,11 +52,11 @@ class P4_game:
         #vérfier si la ligne est correcte 
         l, c = ligne, colonne
         pionsLigne = 0
-        while l > 0 and self.tableJeu[l-1][c] == self.joueur:
+        while l > 0 and self.tableJeu[l-1][c] == joueur:
             pionsLigne += 1
             l -= 1
         l = ligne
-        while l < 5 and self.tableJeu[l+1][c] == self.joueur:
+        while l < 5 and self.tableJeu[l+1][c] == joueur:
             pionsLigne += 1
             l += 1
         if pionsLigne >= 4:
@@ -65,12 +65,12 @@ class P4_game:
         #vérifier si la diagonale haut gauche --> bas droit est correcte
         l, c = ligne, colonne
         pions1Diago = 0
-        while l < 5 and c > 0 and self.tableJeu[l+1][c-1] == self.joueur:
+        while l < 5 and c > 0 and self.tableJeu[l+1][c-1] == joueur:
             pions1Diago += 1
             l += 1
             c -= 1
         l,c = ligne, colonne
-        while l > 0 and c < 6 and self.tableJeu[l-1][c+1] == self.joueur:
+        while l > 0 and c < 6 and self.tableJeu[l-1][c+1] == joueur:
             pions1Diago += 1
             l -= 1
             c += 1
@@ -80,12 +80,12 @@ class P4_game:
         #vérifier si la diagonale bas gauche --> haut droit est correcte
         l, c = ligne, colonne
         pions2Diago = 0
-        while l > 0 and c > 0 and self.tableJeu[l-1][c-1] == self.joueur:
+        while l > 0 and c > 0 and self.tableJeu[l-1][c-1] == joueur:
             pions2Diago += 1
             l -= 1
             c -= 1
         l, c = ligne, colonne
-        while l < 5 and c < 6 and self.tableJeu[l+1][c+1] == self.joueur:
+        while l < 5 and c < 6 and self.tableJeu[l+1][c+1] == joueur:
             pions2Diago += 1
             l += 1
             c += 1
