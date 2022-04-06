@@ -28,7 +28,7 @@ def affichage_plateau():
 def affichage_pion(joueur):
     ''' Cette fonction dessine le pion du joueur donné à la position donnée.
         Le paramètre joueur doit avoir la valeur 1 pour les pions rouges.    '''
-    if joueur == 1:
+    if joueur[0] == 1:
         pion = pionR
     else:
         pion = pionJ
@@ -52,14 +52,14 @@ def affichage_pion(joueur):
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
-
-    fond.blit(pion,(colonne*100,ligne*100))
-    fenetre.blit(fond, (0,0))
-    pygame.display.flip()
+                fond.blit(pion,(colonne*100,ligne*100))
+                fenetre.blit(fond, (0,0))
+                pygame.display.flip()
 
 ### test juste en bas là 
 
 if __name__ == "__main__":
+    print("chargement")
     joueur = ([1,2])
     fenetre = pygame.display.set_mode((700,600))
     pionR = pygame.image.load(sys.path[0] + "/Photos/pr.png").convert()
@@ -85,7 +85,7 @@ if __name__ == "__main__":
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
-                if joueur == 1:
+                if joueur[0] == 1:
                     pion = pionR
                 else:
                     pion = pionJ
