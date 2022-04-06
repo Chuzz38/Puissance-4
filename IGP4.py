@@ -1,7 +1,7 @@
-import Alen_grille_p4_officiel
-import pygame
-import sys
-import p4_game
+#from Alen_grille_p4_officiel import *
+from pygame import *
+from sys import *
+from p4_game import *
 
 
 
@@ -28,7 +28,6 @@ def affichage_plateau():
 def affichage_pion(joueur):
     ''' Cette fonction dessine le pion du joueur donné à la position donnée.
         Le paramètre joueur doit avoir la valeur 1 pour les pions rouges.    '''
-    global joueur
     if joueur == 1:
         pion = pionR
     else:
@@ -53,8 +52,7 @@ def affichage_pion(joueur):
             if event.pos >= (600,0) and event.pos <= (700,600):
                 colonne = 7
 
-    
-    fond.blit(pion,(num_colonne,num_ligne))
+    fond.blit(pion, (num_colonne*100,num_ligne*100) )
 
     fenetre.blit(fond, (0,0))
     pygame.display.flip()
@@ -62,7 +60,8 @@ def affichage_pion(joueur):
 ### test juste en bas là 
 
 if __name__ == "__main__":
-    while not verifier_victoire:
+    test = P4_game()
+    while not test.verifier_victoire():
         print(chargement())
         print(affichage_plateau())
     
