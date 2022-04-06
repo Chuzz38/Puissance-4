@@ -1,6 +1,10 @@
 from p4_game import *
+from IPG4 import *
 
 class P4_console:
+
+    P4_console
+    coup du joueur
     joueur1 = input("Ecrivez le nom du joueur 1 : ")
     joueur2 = input("Ecrivez le nom du joueur 2 : ")
     print(" ")
@@ -39,7 +43,7 @@ class P4_console:
         if not placement_possible():
             print("Vous devez rejouer")
         else:
-            ajoutePion(co, '@')
+            ajoutePion(affichage_pion(joueur, '@')
         
 
         afficheTableau()
