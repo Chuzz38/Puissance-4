@@ -1,7 +1,7 @@
-#from Alen_grille_p4_officiel import *
 import pygame
-from sys import *
-from p4_game import *
+import sys
+import p4_game
+import p4_console
 
 
 
