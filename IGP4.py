@@ -1,9 +1,9 @@
 import pygame
 import sys
 import p4_game
-import p4_console
+#import p4_console
 
-
+joueur = ([1,2])
 
 def chargement():
     ''' Cette fonction affiche l'interface graphique du jeu de puissance 4. '''
@@ -60,7 +60,7 @@ def affichage_pion(joueur):
 ### test juste en bas là 
 
 if __name__ == "__main__":
-    global joueur
+    joueur = ([1,2])
     fenetre = pygame.display.set_mode((700,600))
     pionR = pygame.image.load(sys.path[0] + "/Photos/pr.png").convert()
     pionJ = pygame.image.load(sys.path[0] + "/Photos/pj.png").convert()
