@@ -60,10 +60,32 @@ def affichage_pion(joueur):
 ### test juste en bas là 
 
 if __name__ == "__main__":
-    test = P4_game()
-    while not test.verifier_victoire():
-        print(chargement())
-        print(affichage_plateau())
-    
+
+    fenetre = pygame.display.set_mode((700,600))
+    pionR = pygame.image.load(sys.path[0] + "/pr.png").convert()
+    pionJ = pygame.image.load(sys.path[0] + "/pj.png").convert()
+    continuer = 1
+    while continuer:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                continuer = 0
+            elif event.type == MOUSEBUTTONDOWN:
+                if event.pos >= (0,0) and event.pos <= (100,600):
+                    colonne = 1
+                if event.pos >= (100,0) and event.pos <= (200,600):
+                    colonne = 2
+                if event.pos >= (200,0) and event.pos <= (300,600):
+                    colonne = 3
+                if event.pos >= (300,0) and event.pos <= (400,600):
+                    colonne = 4
+                if event.pos >= (400,0) and event.pos <= (500,600):
+                    colonne = 5
+                if event.pos >= (500,0) and event.pos <= (600,600):
+                    colonne = 6
+                if event.pos >= (600,0) and event.pos <= (700,600):
+                    colonne = 7
+                fond.blit(pion,(colonne*100,num_ligne*100))
+    fenetre.blit(fond, (0,0))
+    pygame.display.flip()
     
 # screen.blit(jetonRouge, (16 + 97 * colonne, 13 - 97.5 * lignedejeu + 486))
