@@ -89,7 +89,6 @@ class P4_game:
             pions2Diago += 1
             l += 1
             c += 1
-        if pions2Diago >= 4:
             return True
         
         return False
