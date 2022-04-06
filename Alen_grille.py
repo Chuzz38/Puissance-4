@@ -1,3 +1,5 @@
+import IGP4
+
 joueur1 = input("Ecrivez le nom du joueur 1 : ")
 joueur2 = input("Ecrivez le nom du joueur 2 : ")
 print(" ")
@@ -26,18 +28,17 @@ def ajoutePion(colonne, pion):
             print("placee en ligne",i)
             break
 
-
+chargement()
+affichage_tableau()
 for i in range (21):
     afficheTableau()
     print(" ")
     print(joueur1,"c'est ton tour")
     print(" ")
-    co = int(input("entrer une colonne "))
-    ajoutePion(co, '@')
+    ajoutePion(affichage_pion, '@')
 
     afficheTableau()
     print(" ")
     print(joueur2,"c'est ton tour")
     print(" ")
-    co = int(input("entrer une colonne "))
-    ajoutePion(co, 'X')
+    ajoutePion(affichage_pion, 'X')

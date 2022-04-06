@@ -1,4 +1,5 @@
 from p4_game import *
+from IGP4
 
 class P4_console:
     joueur1 = input("Ecrivez le nom du joueur 1 : ")
@@ -35,21 +36,19 @@ class P4_console:
         print(" ")
         print(joueur1,"c'est ton tour")
         print(" ")
-        co = int(input("entrer une colonne "))
         if not placement_possible():
             print("Vous devez rejouer")
         else:
-            ajoutePion(co, '@')
+            ajoutePion(affichage_pion(joueur), '@')
         
 
         afficheTableau()
         print(" ")
         print(joueur2,"c'est ton tour")
         print(" ")
-        co = int(input("entrer une colonne "))
         if not placement_possible():
             print("Vous devez rejouer")
         else:
-            ajoutePion(co, 'X')
+            ajoutePion(affichage_pion(joueur), 'X')
 
     
