@@ -8,6 +8,7 @@ class P4_console:
         self.jeton = jeton
         self.joueur = joueur 
         self.tableJeu = [['0' for i in range(nc)] for j in range(nl)]
+        dd
 
     def demande():
         joueur1 = input("Ecrivez le nom du joueur 1 : ")
