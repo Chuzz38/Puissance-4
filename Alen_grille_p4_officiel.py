@@ -6,15 +6,15 @@ class P4_console:
     print(" ")
 
 
-    COLONNE = 7
-    LIGNE = 6
+    colonne = 7
+    ligne = 6
 
 
     tableau = [['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.']]
 
     def afficheTableau(self):
-        for l in range (LIGNE):
-            for c in range (COLONNE):
+        for l in range (ligne):
+            for c in range (colonne):
                 print(tableau[l][c], end = " ")
             print()
 
