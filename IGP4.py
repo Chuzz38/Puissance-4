@@ -59,7 +59,6 @@ def affichage_pion(joueur):
 ### test juste en bas là 
 
 if __name__ == "__main__":
-    print("chargement")
     joueur = ([1,2])
     fenetre = pygame.display.set_mode((700,600))
     pionR = pygame.image.load(sys.path[0] + "/Photos/pr.png").convert()
