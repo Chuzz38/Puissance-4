@@ -1,7 +1,7 @@
 import pygame
 import sys
 import p4_game
-import p4_console
+#import p4_console
 
 
 
@@ -12,8 +12,8 @@ def chargement():
     #Ouverture de la fenêtre Pygame (carré : largeur = hauteur)
     fenetre = pygame.display.set_mode((700,600))
     #Pion 
-    pionR = pygame.image.load(sys.path[0] + "/pr.png").convert()
-    pionJ = pygame.image.load(sys.path[0] + "/pj.png").convert()
+    pionR = pygame.image.load(sys.path[0] + "/Photos/pr.png").convert()
+    pionJ = pygame.image.load(sys.path[0] + "/Photos/pj.png").convert()
     pygame.display.flip()
 
 def affichage_plateau():
@@ -21,7 +21,7 @@ def affichage_plateau():
         La fonction chargement_jeu() doit avoir été appelée avant. '''
     global fond
     #Grille
-    fond = pygame.image.load(sys.path[0] + "/grille.png")
+    fond = pygame.image.load(sys.path[0] + "/Photos/grille.png")
     fenetre.blit(fond, (0,0))
     pygame.display.flip()
 
@@ -35,9 +35,9 @@ def affichage_pion(joueur):
     continuer = 1
     while continuer:
         for event in pygame.event.get():	#Attente des événements
-            if event.type == QUIT:
+            if event.type == pygame.QUIT:
                 continuer = 0
-            elif event.type == MOUSEBUTTONDOWN:
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.pos >= (0,0) and event.pos <= (100,600):
                     colonne = 1
                 if event.pos >= (100,0) and event.pos <= (200,600):
@@ -60,16 +60,17 @@ def affichage_pion(joueur):
 ### test juste en bas là 
 
 if __name__ == "__main__":
-
+    global joueur
     fenetre = pygame.display.set_mode((700,600))
-    pionR = pygame.image.load(sys.path[0] + "/pr.png").convert()
-    pionJ = pygame.image.load(sys.path[0] + "/pj.png").convert()
+    pionR = pygame.image.load(sys.path[0] + "/Photos/pr.png").convert()
+    pionJ = pygame.image.load(sys.path[0] + "/Photos/pj.png").convert()
+    fond = pygame.image.load(sys.path[0] + "/Photos/grille.png")
+    fenetre.blit(fond, (0,0))
+    pygame.display.flip()
     continuer = 1
     while continuer:
         for event in pygame.event.get():
-            if event.type == QUIT:
-                continuer = 0
-            elif event.type == MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.pos >= (0,0) and event.pos <= (100,600):
                     colonne = 1
                 if event.pos >= (100,0) and event.pos <= (200,600):
@@ -84,7 +85,13 @@ if __name__ == "__main__":
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
-                fond.blit(pion,(colonne*100,num_ligne*100))
+                if joueur == 1:
+                    pion = pionR
+                else:
+                    pion = pionJ
+                fond.blit(pion,(colonne*100,ligne*100))
+            if event.type == pygame.QUIT:
+                continuer = 0
     fenetre.blit(fond, (0,0))
     pygame.display.flip()
     
