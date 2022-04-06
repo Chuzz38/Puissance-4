@@ -1,7 +1,7 @@
 from p4_game import *
 
 class P4_console:
-    def __init__(self, nl, nc, joueur1, joueur2)):
+    def __init__(self, nl, nc, joueur1, joueur2):
         self.nl = 6
         self.nc = 7
         self.joueur1 = joueur1
@@ -32,25 +32,17 @@ class P4_console:
 
 
 """Il faut définir joueur avant de commencer le jeu"""
-joueur = int(input())
+print("Joueur n°1, donnez votre nom :")
+joueur = input()
 #Mieux le définir et demander joueur1 et joueur2
 while not P4_game.verifier_victoire(nl, nc, joueur):
-        P4_console.afficheTableau()
-        print(" ")
-        print(joueur,"c'est ton tour")
-        print(" ")
-        if not P4_game.placement_possible():
-            print("Vous devez rejouer")
-            colonne = int(input())
-        else:
-            P4_console.ajoutePion(colonne, joueur)   
-        #ne le faire qu'une fois selon le joueur qui joue 
-
-        P4_console.afficheTableau()
-        print(" ")
-        print(joueur2,"c'est ton tour")
-        print(" ")
-        if not placement_possible():
-            print("Vous devez rejouer")
-        else:
-            ajoutePion(affichage_pion(joueur), 'X')
+    P4_console.afficheTableau()
+    print(" ")
+    print(joueur,"c'est ton tour")
+    print(" ")
+    if not P4_game.placement_possible():
+        print("Vous devez rejouer")
+        colonne = int(input())
+    else:
+        P4_console.ajoutePion(colonne, joueur)  
+    """while not ajoutePion # tant que le coup n'a pas été joué on reste sur le joueur."""
