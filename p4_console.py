@@ -1,16 +1,20 @@
 from p4_game import *
-from IPG4
 
 class P4_console:
-    def __init__(self, nl=6, nc=7,jeton=('1','2'), joueur=(1,2)):
-        self.nl = nl
-        self.nc = nc
-        self.jeton = jeton
-        self.joueur = joueur 
+    def __init__(self, nl, nc, joueur1, joueur2)):
+        self.nl = 6
+        self.nc = 7
+        self.joueur1 = joueur1
+        self.joueur2 = joueur2
         self.tableJeu = [['0' for i in range(nc)] for j in range(nl)]
-        dd
 
-    def demande():
+    def jeton(self, joueur):
+        if joueur == self.joueur1:
+            print('@')
+        elif joueur == self.joueur2:
+            print('X')
+
+    def coup_joueur(self, joueur):
         joueur1 = input("Ecrivez le nom du joueur 1 : ")
         joueur2 = input("Ecrivez le nom du joueur 2 : ")
         print(" ")
@@ -18,33 +22,31 @@ class P4_console:
     def afficheTableau(self):
         for l in range (nl):
             for c in range (nc):
-                print(tableau[l][c], end = " ")
+                print(self.tableJeu[l][c], end = " ")
             print()
 
-    def verifieLignes():
-        pass
+    def ajoutePion(self, colonne, joueur):
+        P4_game.placer_jeton(colonne, joueur)
 
 
-    def ajoutePion(colonne, pion):
-        for i in range (nl-1, -1, -1):
-            if tableau[i][colonne]==".":
-                tableau[i][colonne] = pion
-                print("placee en ligne",i)
-                break
 
 
-    while not P4_game.verifier_victoire(ligne, colonne, joueur):
-        afficheTableau()
+"""Il faut définir joueur avant de commencer le jeu"""
+joueur = int(input())
+#Mieux le définir et demander joueur1 et joueur2
+while not P4_game.verifier_victoire(nl, nc, joueur):
+        P4_console.afficheTableau()
         print(" ")
-        print(joueur1,"c'est ton tour")
+        print(joueur,"c'est ton tour")
         print(" ")
-        if not placement_possible():
+        if not P4_game.placement_possible():
             print("Vous devez rejouer")
+            colonne = int(input())
         else:
-            ajoutePion(affichage_pion(joueur, '@')
-        
+            P4_console.ajoutePion(colonne, joueur)   
+        #ne le faire qu'une fois selon le joueur qui joue 
 
-        afficheTableau()
+        P4_console.afficheTableau()
         print(" ")
         print(joueur2,"c'est ton tour")
         print(" ")

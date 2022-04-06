@@ -24,7 +24,7 @@ class P4_game:
         True si la case est libre et False sinon"""
         return self.tableJeu[0][colonne] == 0 
 
-    def placer_jeton(self, joueur, colonne):
+    def placer_jeton(self, colonne, joueur):
         """ Joue le coup du joueur dans la colonne choisie.
         Si la colonne n'est pas disponible il faut choir une autre colonne
         """
@@ -92,8 +92,6 @@ class P4_game:
             return True
         
         return False
-
-
 
 if __name__ == "__main__":
     nc = 7
