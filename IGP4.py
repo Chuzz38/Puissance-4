@@ -1,4 +1,4 @@
-#from Alen_grille_p4_officiel import *
+from Alen_grille_p4_officiel import *
 from pygame import *
 from sys import *
 from p4_game import *
@@ -52,8 +52,7 @@ def affichage_pion(joueur):
             if event.pos >= (600,0) and event.pos <= (700,600):
                 colonne = 7
 
-    fond.blit(pion, (num_colonne*100,num_ligne*100) )
-
+    fond.blit(pion,(colonne*100,num_ligne*100))
     fenetre.blit(fond, (0,0))
     pygame.display.flip()
 
