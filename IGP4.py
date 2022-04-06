@@ -1,4 +1,4 @@
-import Alen_P4
+import Alen_grille_p4_officiel
 import pygame
 import sys
 import p4_game
@@ -25,29 +25,33 @@ def affichage_plateau():
     fenetre.blit(fond, (0,0))
     pygame.display.flip()
 
-def affichage_pion():
+def affichage_pion(joueur):
     ''' Cette fonction dessine le pion du joueur donné à la position donnée.
         Le paramètre joueur doit avoir la valeur 1 pour les pions rouges.    '''
+    global joueur
     if joueur == 1:
         pion = pionR
     else:
         pion = pionJ
-
-    while event.type == MOUSEBUTTONDOWN: 
-        if event.pos >= (0,0) and event.pos <= (100,600):
-            colonne = 1
-        if event.pos >= (100,0) and event.pos <= (200,600):
-            colonne = 2
-        if event.pos >= (200,0) and event.pos <= (300,600):
-            colonne = 3
-        if event.pos >= (300,0) and event.pos <= (400,600):
-            colonne = 4
-        if event.pos >= (400,0) and event.pos <= (500,600):
-            colonne = 5
-        if event.pos >= (500,0) and event.pos <= (600,600):
-            colonne = 6
-        if event.pos >= (600,0) and event.pos <= (700,600):
-            colonne = 7
+    continuer = 1
+    while continuer:
+        for event in pygame.event.get():	#Attente des événements
+            if event.type == QUIT:
+                continuer = 0
+            if event.pos >= (0,0) and event.pos <= (100,600):
+                colonne = 1
+            if event.pos >= (100,0) and event.pos <= (200,600):
+                colonne = 2
+            if event.pos >= (200,0) and event.pos <= (300,600):
+                colonne = 3
+            if event.pos >= (300,0) and event.pos <= (400,600):
+                colonne = 4
+            if event.pos >= (400,0) and event.pos <= (500,600):
+                colonne = 5
+            if event.pos >= (500,0) and event.pos <= (600,600):
+                colonne = 6
+            if event.pos >= (600,0) and event.pos <= (700,600):
+                colonne = 7
 
     
     fond.blit(pion,(num_colonne,num_ligne))
