@@ -2,6 +2,7 @@ from p4_game import *
 from IPG4
 
 class P4_console:
+<<<<<<< HEAD
 
     
     P4_console
@@ -16,10 +17,23 @@ class P4_console:
 
 
     tableau = [['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.']]
+=======
+    def __init__(self, nl=6, nc=7,jeton=('1','2'), joueur=(1,2)):
+        self.nl = nl
+        self.nc = nc
+        self.jeton = jeton
+        self.joueur = joueur 
+        self.tableJeu = [['0' for i in range(nc)] for j in range(nl)]
+
+    def demande():
+        joueur1 = input("Ecrivez le nom du joueur 1 : ")
+        joueur2 = input("Ecrivez le nom du joueur 2 : ")
+        print(" ")
+>>>>>>> 047daeb726613b403a5c5fc452e367988d8b65fd
 
     def afficheTableau(self):
-        for l in range (ligne):
-            for c in range (colonne):
+        for l in range (nl):
+            for c in range (nc):
                 print(tableau[l][c], end = " ")
             print()
 
@@ -28,7 +42,7 @@ class P4_console:
 
 
     def ajoutePion(colonne, pion):
-        for i in range (LIGNE-1, -1, -1):
+        for i in range (nl-1, -1, -1):
             if tableau[i][colonne]==".":
                 tableau[i][colonne] = pion
                 print("placee en ligne",i)
