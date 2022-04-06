@@ -1,7 +1,23 @@
 from p4_game import *
-from IGP4
+from IPG4
 
 class P4_console:
+<<<<<<< HEAD
+
+    
+    P4_console
+    coup du joueur
+    joueur1 = input("Ecrivez le nom du joueur 1 : ")
+    joueur2 = input("Ecrivez le nom du joueur 2 : ")
+    print(" ")
+
+
+    colonne = 7
+    ligne = 6
+
+
+    tableau = [['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.'],['.','.','.','.','.','.','.']]
+=======
     def __init__(self, nl=6, nc=7,jeton=('1','2'), joueur=(1,2)):
         self.nl = nl
         self.nc = nc
@@ -13,6 +29,7 @@ class P4_console:
         joueur1 = input("Ecrivez le nom du joueur 1 : ")
         joueur2 = input("Ecrivez le nom du joueur 2 : ")
         print(" ")
+>>>>>>> 047daeb726613b403a5c5fc452e367988d8b65fd
 
     def afficheTableau(self):
         for l in range (nl):
@@ -40,7 +57,7 @@ class P4_console:
         if not placement_possible():
             print("Vous devez rejouer")
         else:
-            ajoutePion(affichage_pion(joueur), '@')
+            ajoutePion(affichage_pion(joueur, '@')
         
 
         afficheTableau()
