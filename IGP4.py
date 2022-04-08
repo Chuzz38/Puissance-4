@@ -1,7 +1,7 @@
 import pygame
 import sys
 import p4_game
-#import p4_console
+import p4_console
 
 joueur = ([1,2])
 
@@ -84,11 +84,12 @@ if __name__ == "__main__":
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
-                if joueur[0] == 1:
+                if self.joueur1:
                     pion = pionR
                 else:
                     pion = pionJ
                 fond.blit(pion,(colonne*100,ligne*100))
+                pygame.display.flip()
             if event.type == pygame.QUIT:
                 continuer = 0
     fenetre.blit(fond, (0,0))
