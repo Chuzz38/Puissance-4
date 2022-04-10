@@ -62,7 +62,7 @@ nc = 0
 nl = 0
 nbTours = 0
 
-while not console.game.verifier_victoire(nl, nc) or nbTours == 42:
+while not console.game.verifier_victoire(nl, nc) or not nbTours == 42:
     console.afficheTableau()
     print(" ")
     if console.game.joueur == 1:
