@@ -20,12 +20,12 @@ class P4_game:
     def get_ligne(self, colonne):
         """
         Fonction qui renvoie la ligne par rapport
-        à la colonne qui vient d'être joué.
+        à la colonne qui vient d'être joué. Soit la
+        plus haute ligne avec un jeton
         """
         ligne = 0
         while ligne < self.nl and self.tableJeu[ligne][colonne] == '0':
             ligne += 1
-        ligne -= 1
         return ligne
 
     def joueur_suivant(self):
@@ -57,6 +57,9 @@ class P4_game:
             self.tableJeu[vide-1][colonne] = 'X'
 
         return vide
+
+    def dernier_coup(self):
+        pass
 
     def verifier_victoire(self, ligne, colonne):
         """

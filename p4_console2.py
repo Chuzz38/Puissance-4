@@ -17,7 +17,7 @@ class P4_console:
 
     def jouerTour(self):
         """
-        Fonction qui fait joueur le tour au joueur
+        Fonction qui fait jouer le tour du joueur
         """
         while True: # tant que le joueur n'a pas joué correctement
             print("Choisissez la colonne où vous voulez jouer.")
@@ -28,7 +28,7 @@ class P4_console:
                 print("Vous ne pouvez pas placer votre jeton ici")
             else:
                 self.game.placer_jeton(nc)
-                return self.game.placer_jeton(nc)
+                return nc
 
     def afficheTableau(self):
         """
@@ -69,16 +69,11 @@ while not console.game.verifier_victoire(nl, nc) or nbTours == 42:
         print(f"\n{joueur1},c'est ton tour\n")
     else:
         print(f"\n{joueur2},c'est à ton tour\n")
-    nl = console.jouerTour()
-    print(nl)
+    nc = console.jouerTour()
+    nl = console.game.get_ligne(nc)
     joueur = console.game.joueur_suivant()
     nbTours += 1
-    """
-    nl = console.game.get_ligne(nc) #
-    
-    nl = console.game.placer_jeton(nc) - 1
-    print(nl)"""
-    
+    print(nc,nl)
 
 console.game.joueur_suivant()
 if console.game.joueur == 1:
