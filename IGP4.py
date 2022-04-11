@@ -1,9 +1,8 @@
 import pygame
 import sys
-import p4_game
-import p4_console
+import p4_game2
+import p4_console2
 
-joueur = ([1,2])
 
 def chargement():
     ''' Cette fonction affiche l'interface graphique du jeu de puissance 4. '''
@@ -28,16 +27,12 @@ def affichage_plateau():
 def affichage_pion(joueur):
     ''' Cette fonction dessine le pion du joueur donné à la position donnée.
         Le paramètre joueur doit avoir la valeur 1 pour les pions rouges.    '''
-    if joueur[0] == 1:
-        pion = pionR
-    else:
-        pion = pionJ
     continuer = 1
     while continuer:
         for event in pygame.event.get():	#Attente des événements
             if event.type == pygame.QUIT:
                 continuer = 0
-            elif event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.pos >= (0,0) and event.pos <= (100,600):
                     colonne = 1
                 if event.pos >= (100,0) and event.pos <= (200,600):
@@ -52,6 +47,11 @@ def affichage_pion(joueur):
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
+                #Trouvons le pion à jouer
+                if jeton[0] == '@':
+                    pion = pionR
+                else:
+                    pion = pionJ    
                 fond.blit(pion,(colonne*100,ligne*100))
                 fenetre.blit(fond, (0,0))
                 pygame.display.flip()
@@ -59,7 +59,6 @@ def affichage_pion(joueur):
 ### test juste en bas là 
 
 if __name__ == "__main__":
-    joueur = ([1,2])
     fenetre = pygame.display.set_mode((700,600))
     pionR = pygame.image.load(sys.path[0] + "/Photos/pr.png").convert()
     pionJ = pygame.image.load(sys.path[0] + "/Photos/pj.png").convert()
@@ -84,7 +83,7 @@ if __name__ == "__main__":
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
-                if self.joueur1:
+                if jeton[0] == '@':
                     pion = pionR
                 else:
                     pion = pionJ
@@ -92,7 +91,5 @@ if __name__ == "__main__":
                 pygame.display.flip()
             if event.type == pygame.QUIT:
                 continuer = 0
-    fenetre.blit(fond, (0,0))
-    pygame.display.flip()
-    
-# screen.blit(jetonRouge, (16 + 97 * colonne, 13 - 97.5 * lignedejeu + 486))
+            fenetre.blit(fond, (0,0))
+            pygame.display.flip()
