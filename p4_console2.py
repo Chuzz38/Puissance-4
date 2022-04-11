@@ -34,7 +34,12 @@ class P4_console:
         """
         for l in range (self.nl):
             for c in range (self.nc):
-                print(self.game.get_case(l,c), end = " ")
+                if self.game.get_case(l,c) == '0':
+                    print('.', end = " ")
+                elif self.game.get_case(l,c) == '1':
+                    print('@', end = " ")
+                else:
+                    print('X', end = " ")
             print()
 
 console = P4_console()
@@ -63,15 +68,16 @@ while not gagne or nbTours == 42:
     console.afficheTableau()
     print(" ")
     if console.game.joueur == 1:
-        print(f"\n{joueur1},c'est ton tour\n")
+        print(f"\n{joueur1}, c'est ton tour\n")
     else:
-        print(f"\n{joueur2},c'est à ton tour\n")
+        print(f"\n{joueur2}, c'est à ton tour\n")
     nc = console.jouerTour()
     nl = console.game.get_ligne(nc)
     gagne = console.game.verifier_victoire(nl, nc)
     joueur = console.game.joueur_suivant()
     nbTours += 1
-
+    
+console.afficheTableau()
 console.game.joueur_suivant()
 if console.game.joueur == 1:
     print(f"\nBien joué {joueur1}, vous avez gagné la partie !\n")

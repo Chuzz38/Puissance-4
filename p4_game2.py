@@ -4,11 +4,10 @@ et les différentes méthodes pour rendre le puissance 4 possible
 """
 
 class P4_game:
-    def __init__(self, nl=6, nc=7, jeton=('@','X')):
+    def __init__(self, nl=6, nc=7):
         self.nl = nl
         self.nc = nc
         self.joueur = 1
-        self.jeton = jeton
         self.tableJeu = [['0' for i in range(nc)] for j in range(nl)]
 
     def get_case(self, ligne, colonne):
@@ -53,9 +52,9 @@ class P4_game:
             vide += 1
 
         if self.joueur == 1:
-            self.tableJeu[vide-1][colonne] = '@'
+            self.tableJeu[vide-1][colonne] = '1'
         else:
-            self.tableJeu[vide-1][colonne] = 'X'
+            self.tableJeu[vide-1][colonne] = '2'
 
         return vide
 
@@ -67,13 +66,17 @@ class P4_game:
         et diagonales.
         """
         # Vérifier si la ligne est gagnée
+        if self.joueur == 1:
+            jeton = '1'
+        else:
+            jeton = '2'
         l, c = ligne, colonne
         pionsTotal = 1
-        while c > 0 and self.tableJeu[l][c-1] == self.joueur:
+        while c > 0 and self.tableJeu[l][c-1] == jeton:
             pionsTotal += 1
             c -= 1
         c = colonne 
-        while c < 6 and self.tableJeu[l][c+1] == self.joueur:
+        while c < 6 and self.tableJeu[l][c+1] == jeton:
             pionsTotal += 1
             c += 1
         if pionsTotal >= 4:
@@ -82,11 +85,11 @@ class P4_game:
         # Vérfier si la colonne est gagnée 
         l, c = ligne, colonne
         pionsTotal = 1
-        while l > 0 and self.tableJeu[l-1][c] == self.joueur:
+        while l > 0 and self.tableJeu[l-1][c] == jeton:
             pionsTotal += 1
             l -= 1
         l = ligne
-        while l < 5 and self.tableJeu[l+1][c] == self.joueur:
+        while l < 5 and self.tableJeu[l+1][c] == jeton:
             pionsTotal += 1
             l += 1
         if pionsTotal >= 4:
@@ -95,12 +98,12 @@ class P4_game:
         # Vérifier si la diagonale haut gauche --> bas droit est gagnée
         l, c = ligne, colonne
         pionsTotal = 1
-        while l < 5 and c > 0 and self.tableJeu[l+1][c-1] == self.joueur:
+        while l < 5 and c > 0 and self.tableJeu[l+1][c-1] == jeton:
             pionsTotal += 1
             l += 1
             c -= 1
         l,c = ligne, colonne
-        while l > 0 and c < 6 and self.tableJeu[l-1][c+1] == self.joueur:
+        while l > 0 and c < 6 and self.tableJeu[l-1][c+1] == jeton:
             pionsTotal += 1
             l -= 1
             c += 1
@@ -110,12 +113,12 @@ class P4_game:
         # Vérifier si la diagonale bas gauche --> haut droit est gagnée
         l, c = ligne, colonne
         pionsTotal = 1
-        while l > 0 and c > 0 and self.tableJeu[l-1][c-1] == self.joueur:
+        while l > 0 and c > 0 and self.tableJeu[l-1][c-1] == jeton:
             pionsTotal += 1
             l -= 1
             c -= 1
         l, c = ligne, colonne
-        while l < 5 and c < 6 and self.tableJeu[l+1][c+1] == self.joueur:
+        while l < 5 and c < 6 and self.tableJeu[l+1][c+1] == jeton:
             pionsTotal += 1
             l += 1
             c += 1
@@ -127,5 +130,5 @@ class P4_game:
 if __name__ == "__main__":
     nc = 7
     nl = 6
-    tableJeu = [['0' for i in range(nc)] for j in range(nl)]
+    tableJeu = [['.' for i in range(nc)] for j in range(nl)]
     print(tableJeu)
