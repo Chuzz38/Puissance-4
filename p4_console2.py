@@ -1,5 +1,4 @@
 from p4_game2 import *
-import random
 
 class P4_console:
     def __init__(self, nl=6, nc = 7):
@@ -64,7 +63,7 @@ nl = 0
 nbTours = 0
 gagne = False
 
-while not gagne or nbTours == 42:
+while not gagne and nbTours != 42:
     console.afficheTableau()
     print(" ")
     if console.game.joueur == 1:
@@ -76,16 +75,16 @@ while not gagne or nbTours == 42:
     gagne = console.game.verifier_victoire(nl, nc)
     joueur = console.game.joueur_suivant()
     nbTours += 1
-    
+
 console.afficheTableau()
 console.game.joueur_suivant()
-if console.game.joueur == 1:
+if nbTours == 42:
+    print("Vous avez fait match nul, bravo à vous 2 !")
+    print("C'était une belle partie !")
+elif console.game.joueur == 1:
     print(f"\nBien joué {joueur1}, vous avez gagné la partie !\n")
 elif console.game.joueur == 2:
     print(f"\nBien joué {joueur2}, vous avez gagné la partie !\n")
-elif nbTours == 42:
-    print("Vous avez fait match nul, bravo à vous 2 !")
-    print("Cétait une belle partie !")
 
 """Les problèmes à résoudre :
     -Si autre chose est donné au lieu d'un chiffre lors de la colonne
