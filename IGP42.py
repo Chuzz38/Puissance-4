@@ -48,10 +48,11 @@ def affichage_pion(joueur):
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
                 #Trouvons le pion à jouer
-                if jeton[0] == '@':
+                if self.tableJeu[vide-1][colonne] == '@':
                     pion = pionR
                 else:
-                    pion = pionJ    
+                    pion = pionJ 
+                getcase() # comme ca boom colonne et ligne pour en dessous   
                 fond.blit(pion,(colonne*100,ligne*100))
                 fenetre.blit(fond, (0,0))
                 pygame.display.flip()
