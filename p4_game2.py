@@ -4,10 +4,11 @@ et les différentes méthodes pour rendre le puissance 4 possible
 """
 
 class P4_game:
-    def __init__(self, nl=6, nc=7):
+    def __init__(self, nl=6, nc=7, jeton=('@','X')):
         self.nl = nl
         self.nc = nc
         self.joueur = 1
+        self.jeton = jeton
         self.tableJeu = [['0' for i in range(nc)] for j in range(nl)]
 
     def get_case(self, ligne, colonne):
@@ -58,9 +59,6 @@ class P4_game:
 
         return vide
 
-    def dernier_coup(self):
-        pass
-
     def verifier_victoire(self, ligne, colonne):
         """
         Vérifie si le dernier coup joué par le joueur
@@ -70,7 +68,7 @@ class P4_game:
         """
         # Vérifier si la ligne est gagnée
         l, c = ligne, colonne
-        pionsTotal = 0
+        pionsTotal = 1
         while c > 0 and self.tableJeu[l][c-1] == self.joueur:
             pionsTotal += 1
             c -= 1
@@ -83,7 +81,7 @@ class P4_game:
 
         # Vérfier si la colonne est gagnée 
         l, c = ligne, colonne
-        pionsTotal = 0
+        pionsTotal = 1
         while l > 0 and self.tableJeu[l-1][c] == self.joueur:
             pionsTotal += 1
             l -= 1
@@ -96,7 +94,7 @@ class P4_game:
 
         # Vérifier si la diagonale haut gauche --> bas droit est gagnée
         l, c = ligne, colonne
-        pionsTotal = 0
+        pionsTotal = 1
         while l < 5 and c > 0 and self.tableJeu[l+1][c-1] == self.joueur:
             pionsTotal += 1
             l += 1
@@ -111,7 +109,7 @@ class P4_game:
 
         # Vérifier si la diagonale bas gauche --> haut droit est gagnée
         l, c = ligne, colonne
-        pionsTotal = 0
+        pionsTotal = 1
         while l > 0 and c > 0 and self.tableJeu[l-1][c-1] == self.joueur:
             pionsTotal += 1
             l -= 1

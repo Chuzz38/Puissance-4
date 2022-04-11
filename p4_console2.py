@@ -9,11 +9,7 @@ class P4_console:
         self.game = P4_game(nl, nc)
 
     def quiJoue(self):
-        """
-        Méthode qui permet de nous donner, quel
-        joueur doit jouer.
-        """ 
-        pass # donne le tour du joueur 1 ou 2 
+        return self.game.joueur_suivant()
 
     def jouerTour(self):
         """
@@ -61,8 +57,9 @@ joueur2 = input()
 nc = 0
 nl = 0
 nbTours = 0
+gagne = False
 
-while not console.game.verifier_victoire(nl, nc) or not nbTours == 42:
+while not gagne or nbTours == 42:
     console.afficheTableau()
     print(" ")
     if console.game.joueur == 1:
@@ -71,9 +68,9 @@ while not console.game.verifier_victoire(nl, nc) or not nbTours == 42:
         print(f"\n{joueur2},c'est à ton tour\n")
     nc = console.jouerTour()
     nl = console.game.get_ligne(nc)
+    gagne = console.game.verifier_victoire(nl, nc)
     joueur = console.game.joueur_suivant()
     nbTours += 1
-    print(nc,nl)
 
 console.game.joueur_suivant()
 if console.game.joueur == 1:
@@ -87,4 +84,5 @@ elif nbTours == 42:
 """Les problèmes à résoudre :
     -Si autre chose est donné au lieu d'un chiffre lors de la colonne
     pouvoir redemander un choix
-    -"""
+    -L'interface à améliorer
+    ."""
