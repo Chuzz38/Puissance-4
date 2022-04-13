@@ -28,7 +28,7 @@ class P4_console:
     def afficheTableau(self):
         """
         Méthode qui permet d'afficher la table de jeu
-        après chaque modification pour pouvoir suivre le 
+        après chaque modification pour pouvoir suivre le
         jeu en direct.
         """
         for l in range (self.nl):
@@ -45,7 +45,7 @@ console = P4_console()
 
 print()
 print("Vous allez jouer au jeu du puissance 4")
-print("Pour gagner une partie de puissance 4, il suffit d'être le premier à") 
+print("Pour gagner une partie de puissance 4, il suffit d'être le premier à")
 print("aligner 4 de vos jetons soit horizontalement,")
 print("soit verticalement ou même diagonalement. Si lors d'une partie,")
 print("toutes les cases ont été joués sans qu'il n'y ait,")
@@ -89,5 +89,4 @@ elif console.game.joueur == 2:
 """Les problèmes à résoudre :
     -Si autre chose est donné au lieu d'un chiffre lors de la colonne
     pouvoir redemander un choix
-    -L'interface à améliorer
-    ."""
+    """

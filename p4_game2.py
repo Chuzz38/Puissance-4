@@ -37,10 +37,10 @@ class P4_game:
 
     def placement_possible(self, colonne):
         """
-        Prend en parametre seulement la colonne et renvoie 
+        Prend en parametre seulement la colonne et renvoie
         True si la colonne est jouable et False sinon
         """
-        return self.tableJeu[0][colonne] == '0' 
+        return self.tableJeu[0][colonne] == '0'
 
     def placer_jeton(self, colonne):
         """
@@ -48,7 +48,7 @@ class P4_game:
         On suppose que placement est possible
         """
         vide = 0
-        while vide < self.nl and self.tableJeu[vide][colonne] == '0' :
+        while vide < self.nl and self.tableJeu[vide][colonne] == '0':
             vide += 1
 
         if self.joueur == 1:
@@ -75,14 +75,14 @@ class P4_game:
         while c > 0 and self.tableJeu[l][c-1] == jeton:
             pionsTotal += 1
             c -= 1
-        c = colonne 
+        c = colonne
         while c < 6 and self.tableJeu[l][c+1] == jeton:
             pionsTotal += 1
             c += 1
         if pionsTotal >= 4:
             return True
 
-        # Vérfier si la colonne est gagnée 
+        # Vérfier si la colonne est gagnée
         l, c = ligne, colonne
         pionsTotal = 1
         while l > 0 and self.tableJeu[l-1][c] == jeton:
