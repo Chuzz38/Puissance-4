@@ -1,4 +1,6 @@
 from p4_game2 import *
+from IGP4 import *
+
 
 class P4_console:
     def __init__(self, nl=6, nc = 7):
@@ -18,7 +20,7 @@ class P4_console:
             print("Choisissez la colonne où vous voulez jouer.")
             print("Les colonnes allant de 0 pour la colonne à gauche et 6 pour tout à droite")
             print(" ")
-            nc = input()
+            nc = affichage_pion()
  
             if not self.game.placement_possible(int(nc)):
                 print("Vous ne pouvez pas placer votre jeton ici, la colonne est pleine")
