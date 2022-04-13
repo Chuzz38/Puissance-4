@@ -16,13 +16,12 @@ class P4_console:
         """
         while True: # tant que le joueur n'a pas joué correctement
             print("Choisissez la colonne où vous voulez jouer.")
+            print("Les colonnes allant de 0 pour la colonne à gauche et 6 pour tout à droite")
             print(" ")
             nc = input()
-
-            if not nc in [0,1,2,3,4,5,6]:
-                print("Vous vous êtes trompé, vous devez insérer un nombre !")
-            elif not self.game.placement_possible(int(nc)):
-                print("Vous ne pouvez pas placer votre jeton ici")
+ 
+            if not self.game.placement_possible(int(nc)):
+                print("Vous ne pouvez pas placer votre jeton ici, la colonne est pleine")
             else:
                 self.game.placer_jeton(int(nc))
                 return int(nc)
