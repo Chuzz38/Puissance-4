@@ -3,14 +3,9 @@ import sys
 import p4_game2
 import p4_console2
 
-<<<<<<< HEAD:IGP42.py
-game = P4_game()
-console = P4_console()
-
-=======
 game = p4_game2.P4_game()
 console = p4_console2.P4_console()
->>>>>>> fc1462562c98b0552ea3de13497ee57ce9158628:IGP4.py
+
 
 def chargement():
     ''' Cette fonction affiche l'interface graphique du jeu de puissance 4. '''
@@ -57,11 +52,7 @@ def affichage_pion(joueur):
                     colonne = 7
                 #Trouvons le pion à jouer
                 ligne = game.get_ligne(colonne)
-<<<<<<< HEAD:IGP42.py
-                if game.get_case(ligne, colonne) == '@':
-=======
                 if game.get_case(ligne, colonne) == '1':
->>>>>>> fc1462562c98b0552ea3de13497ee57ce9158628:IGP4.py
                     pion = pionR
                 else:
                     pion = pionJ 
@@ -97,10 +88,11 @@ if __name__ == "__main__":
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
-                if jeton[0] == '@':
+                ligne = game.get_ligne(colonne)
+                if game.get_case(ligne, colonne) == '1':
                     pion = pionR
                 else:
-                    pion = pionJ
+                    pion = pionJ 
                 fond.blit(pion,(colonne*100,ligne*100))
                 pygame.display.flip()
             if event.type == pygame.QUIT:
