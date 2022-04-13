@@ -3,6 +3,9 @@ import sys
 import p4_game2
 import p4_console2
 
+game = P4_game()
+console = P4_console()
+
 
 def chargement():
     ''' Cette fonction affiche l'interface graphique du jeu de puissance 4. '''
@@ -48,7 +51,8 @@ def affichage_pion(joueur):
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
                 #Trouvons le pion à jouer
-                if self.tableJeu[vide-1][colonne] == '@':
+                ligne = game.get_ligne(colonne)
+                if game.get_case(ligne, colonne) == '@':
                     pion = pionR
                 else:
                     pion = pionJ 
