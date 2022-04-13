@@ -27,7 +27,7 @@ def affichage_plateau():
     fenetre.blit(fond, (0,0))
     pygame.display.flip()
 
-def affichage_pion(joueur):
+def affichage_pion():
     ''' Cette fonction dessine le pion du joueur donné à la position donnée.
         Le paramètre joueur doit avoir la valeur 1 pour les pions rouges.    '''
     continuer = 1
