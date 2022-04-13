@@ -20,13 +20,13 @@ class P4_console:
             print("Choisissez la colonne où vous voulez jouer.")
             print("Les colonnes allant de 0 pour la colonne à gauche et 6 pour tout à droite")
             print(" ")
-            nc = affichage_pion()
+            nc = int(input())
  
-            if not self.game.placement_possible(int(nc)):
+            if not self.game.placement_possible(nc):
                 print("Vous ne pouvez pas placer votre jeton ici, la colonne est pleine")
             else:
-                self.game.placer_jeton(int(nc))
-                return int(nc)
+                self.game.placer_jeton(nc)
+                return nc
 
     def afficheTableau(self):
         """
