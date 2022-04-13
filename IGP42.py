@@ -3,6 +3,8 @@ import sys
 import p4_game2
 import p4_console2
 
+game = p4_game2.P4_game()
+console = p4_console2.P4_console()
 
 def chargement():
     ''' Cette fonction affiche l'interface graphique du jeu de puissance 4. '''
