@@ -6,6 +6,7 @@ import p4_console2
 game = p4_game2.P4_game()
 console = p4_console2.P4_console()
 
+
 def chargement():
     ''' Cette fonction affiche l'interface graphique du jeu de puissance 4. '''
     global fenetre, pionR, pionJ
@@ -26,7 +27,7 @@ def affichage_plateau():
     fenetre.blit(fond, (0,0))
     pygame.display.flip()
 
-def affichage_pion(joueur):
+def affichage_pion():
     ''' Cette fonction dessine le pion du joueur donné à la position donnée.
         Le paramètre joueur doit avoir la valeur 1 pour les pions rouges.    '''
     continuer = 1
@@ -87,10 +88,11 @@ if __name__ == "__main__":
                     colonne = 6
                 if event.pos >= (600,0) and event.pos <= (700,600):
                     colonne = 7
-                if jeton[0] == '@':
+                ligne = game.get_ligne(colonne)
+                if game.get_case(ligne, colonne) == '1':
                     pion = pionR
                 else:
-                    pion = pionJ
+                    pion = pionJ 
                 fond.blit(pion,(colonne*100,ligne*100))
                 pygame.display.flip()
             if event.type == pygame.QUIT:
